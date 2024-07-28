@@ -12,6 +12,7 @@ def send_email(subject, body):
     # Email configuration
     sender_email = ''
     receiver_email = ''
+    smtp_server = ''
     smtp_port = 587
     smtp_username = ''
     smtp_password = ''
@@ -41,6 +42,6 @@ def mainalert(anomalies,threshold,uc):
         # Send an email
         subject = "Alert !! An Intrusion is detected"
         body = f"ALERT: Number of anomalies ({anomalies}) exceeds 25% of unique connections ({uc}).Please check."
-        #send_email(subject, body)
+        
     else:
         print("No alert triggered.")
